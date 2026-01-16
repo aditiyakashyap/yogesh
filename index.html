@@ -1,102 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Yogesh Sharma — Profile</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  :root{--bg:#071029;--card:#0b1220;--text:#e6eef8;--muted:#9aa7bd;--accent:#60a5fa}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#071029 0%,var(--bg) 100%);color:var(--text);padding:16px}
-  .card{max-width:760px;margin:0 auto;border-radius:14px;background:linear-gradient(180deg,rgba(96,165,250,0.02),transparent),var(--card);border:1px solid rgba(255,255,255,0.04);box-shadow:0 20px 60px rgba(0,0,0,0.6);overflow:hidden}
-  .head{display:flex;gap:12px;align-items:center;padding:14px}
-  .avatar{width:84px;height:84px;border-radius:12px;overflow:hidden;background:#071029;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
-  .avatar img{width:100%;height:100%;object-fit:cover}
-  .meta{flex:1}
-  .name{font-size:18px;font-weight:600}
-  .role{font-size:13px;color:var(--muted);margin-top:6px}
-  .body{padding:12px;display:grid;gap:12px}
-  .panel{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-  .panel h3{margin:0 0 8px 0;font-size:14px}
-  .muted{color:var(--muted);font-size:13px;line-height:1.5}
-  @media(min-width:720px){.head{padding:18px}.avatar{width:120px;height:120px}.body{grid-template-columns:1fr 320px;padding:18px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh Sharma - Professional Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0f172a; --glass-bg: rgba(30, 41, 59, 0.7); --glass-border: rgba(255, 255, 255, 0.1); --accent: #d4af37; --accent-secondary: #3b82f6; --text-main: #f8fafc; --text-muted: #94a3b8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-dark); background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.1) 0px, transparent 50%); color: var(--text-main); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .profile-card { width: 100%; max-width: 450px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 30px; padding: 40px 30px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); animation: slideUp 0.8s ease-out forwards; position: relative; overflow: hidden; }
+        .profile-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%); transform: rotate(45deg); pointer-events: none; }
+        .img-container { width: 140px; height: 140px; margin: 0 auto 25px; position: relative; }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 4px; background: var(--bg-dark); }
+        .name { font-size: 2rem; font-weight: 700; margin-bottom: 5px; background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .role { font-size: 1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-bottom: 20px; }
+        .details-grid { display: grid; gap: 15px; text-align: left; margin-bottom: 30px; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; }
+        .detail-item { display: flex; align-items: center; gap: 15px; font-size: 0.95rem; color: var(--text-muted); }
+        .detail-item i { width: 20px; color: var(--text-main); text-align: center; }
+        .education-badge { display: inline-block; background: rgba(212, 175, 55, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 5px; border: 1px solid rgba(212, 175, 55, 0.2); }
+        .action-buttons { display: flex; gap: 15px; justify-content: center; }
+        .btn { flex: 1; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.2); }
+        .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--text-main); }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body>
-  <main class="card" id="profile">
-    <header class="head">
-      <figure class="avatar"><img id="avatar" src="" alt="Yogesh Sharma portrait" /></figure>
-      <div class="meta">
-        <div class="name" id="name">YOGESH SHARMA</div>
-        <div class="role" id="role">Financial Consultant — New Delhi</div>
-        <div style="margin-top:8px;color:var(--muted)" id="contact">yogesh@wpfcapital.in · 9810636381</div>
-      </div>
-      <div style="text-align:right;color:var(--muted)">
-        <div><strong>Qualification</strong></div>
-        <div id="qual">MBA in Finance</div>
-      </div>
-    </header>
-
-    <section class="body">
-      <div>
-        <div class="panel">
-          <h3>Professional focus</h3>
-          <p class="muted" id="focus">Financial consulting with emphasis on portfolio strategy, risk assessment, and corporate finance advisory.</p>
+    <div class="profile-card">
+        <div class="img-container">
+            <img src="./images/yogesh.jpg" alt="Yogesh Sharma" class="profile-pic" onerror="this.src='https://ui-avatars.com/api/?name=Yogesh+Sharma&background=8e44ad&color=fff&size=256'">
         </div>
-
-        <div style="height:8px"></div>
-
-        <div class="panel">
-          <h3>Interests</h3>
-          <p class="muted" id="interests">Playing sports.</p>
+        <h1 class="name">Yogesh Sharma</h1>
+        <div class="role">Financial Consultant</div>
+        <div class="details-grid">
+            <div class="detail-item"><i class="fas fa-map-marker-alt"></i> <span>New Delhi</span></div>
+            <div class="detail-item"><i class="fas fa-briefcase"></i> <span>Financial Planning & Capital Markets</span></div>
+            <div class="detail-item" style="align-items: flex-start;">
+                <i class="fas fa-graduation-cap" style="margin-top: 5px;"></i>
+                <div>
+                    <span style="display:block; margin-bottom:4px;">Education</span>
+                    <span class="education-badge">MBA in Finance</span>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <aside>
-        <div class="panel">
-          <h3>Contact</h3>
-          <p class="muted">Email: <a id="mail" href="mailto:yogesh@wpfcapital.in">yogesh@wpfcapital.in</a></p>
-          <p class="muted" style="margin-top:8px">Phone: <a id="tel" href="tel:+919810636381">9810636381</a></p>
-          <p class="muted" style="margin-top:8px">Location: New Delhi</p>
-          <div style="height:10px"></div>
-          <div style="display:flex;gap:8px">
-            <label class="btn" for="photo">Upload photo<input id="photo" type="file" accept="image/*" style="display:none"></label>
-          </div>
+        <div class="action-buttons">
+            <a href="mailto:yogesh@wpfcapital.in" class="btn btn-secondary"><i class="far fa-envelope"></i> Email</a>
+            <a href="tel:9810636381" class="btn btn-primary"><i class="fas fa-phone"></i> Call</a>
         </div>
-      </aside>
-    </section>
-  </main>
-
-<script>
-  const profile = {
-    name: "YOGESH SHARMA",
-    email: "yogesh@wpfcapital.in",
-    phone: "9810636381",
-    location: "New Delhi",
-    qualification: "MBA in Finance",
-    focus: "Financial consulting with emphasis on portfolio strategy, risk assessment, and corporate finance advisory.",
-    interests: ["Playing sports"]
-  };
-
-  document.getElementById('name').textContent = profile.name;
-  document.getElementById('role').textContent = `${profile.qualification ? 'Financial Consultant' : ''} — ${profile.location}`;
-  document.getElementById('contact').textContent = `${profile.email} · ${profile.phone}`;
-  document.getElementById('qual').textContent = profile.qualification;
-  document.getElementById('focus').textContent = profile.focus;
-  document.getElementById('interests').textContent = profile.interests.join(' · ');
-  document.getElementById('mail').href = `mailto:${profile.email}`;
-  document.getElementById('tel').href = `tel:+91${profile.phone.replace(/\D/g,'')}`;
-
-  const avatar = document.getElementById('avatar');
-  avatar.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect width="100%" height="100%" fill="#071029"/><text x="50%" y="50%" fill="#60a5fa" font-family="Inter,Arial" font-size="36" text-anchor="middle" dominant-baseline="middle">${profile.name.split(' ')[0][0] || 'Y'}</text></svg>`);
-  document.getElementById('photo').addEventListener('change', (e) => {
-    const f = e.target.files && e.target.files[0];
-    if (!f) return;
-    const r = new FileReader();
-    r.onload = () => avatar.src = r.result;
-    r.readAsDataURL(f);
-  });
-</script>
+    </div>
 </body>
 </html>
